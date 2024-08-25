@@ -7,8 +7,8 @@
       <col style="width:auto">
       <col style="width:auto">
       <col style="width:auto">
-      <col style="width:40%">
-      <col style="width:60%">
+      <col style="width:50%">
+      <col style="width:50%">
       <col style="width:2.5%">
     </colgroup> 
     <thead>
@@ -18,7 +18,7 @@
         <th></th>
         <th>Lecture</th>
         <th>Readings</th>
-        <th>Notes</th>
+        <th>Supp. Material</th>
         <th></th>
       </tr>
     </thead>
@@ -97,9 +97,21 @@
               {{ end }}
             {{ end }}
           </td>
-          <td class="schedule-notes">
-            {{ if .notes }}
-              {{ .notes | safeHTML }}
+          <td class="schedule-suppmat">
+            {{ if .suppmat }}
+              {{ if gt (len .suppmat) 0 }}
+                <ul>
+                {{ range .suppmat }}
+                  <li> 
+                    {{ if .link }}
+                      <a href="{{ .link | safeHTMLAttr}}">{{ .text }}</a> 
+                    {{ else }}
+                      {{ .text | safeHTML }}
+                    {{ end }}
+                  </li>
+                {{ end }}
+                </ul>
+              {{ end }}
             {{ end }}
           </td>
           <td> </td>

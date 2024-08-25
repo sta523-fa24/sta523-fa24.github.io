@@ -5,9 +5,9 @@ schedule:
 - week: 1
   day: 1
   lecture: "Welcome & Syllabus"
-  slides: 
+  slides: Lec01
   screencast: 
-  notes:
+  suppmat:
   readings:
   - text: GitHub Auth Guide
     link: https://github.com/DukeStatSci/github_auth_guide
@@ -24,14 +24,17 @@ schedule:
     link: https://style.tidyverse.org/
   - text: Adv-R - Data Structures
     link: http://adv-r.had.co.nz/Data-structures.html
-  notes:
+  suppmat:
+  - text: test1
+  - text: test2
+    link: http://example.com
 
 - week: 2
   day: 1
   lecture: "Error checking, functions, and loops"
   slides:
   screencast: 
-  notes:
+  suppmat:
   
 - week: 2
   day: 3
@@ -41,7 +44,7 @@ schedule:
   readings:
   - text: Adv R - OO Field Guide - S3
     link: http://adv-r.had.co.nz/OO-essentials.html#s3
-  notes: 
+  suppmat: 
 
 - week: 3
   day: 1
@@ -51,14 +54,14 @@ schedule:
   readings:
   - text: Adv-R - Subsetting
     link: http://adv-r.had.co.nz/Subsetting.html
-  notes: 
+  suppmat: 
 
 - week: 3
   day: 3
   lecture: "Tidy data & dplyr"
   slides:
   screencast: 
-  notes:
+  suppmat:
   readings:
   - text: dplyr Vignette
     link: https://dplyr.tidyverse.org/articles/dplyr.html
@@ -66,7 +69,7 @@ schedule:
     link: http://r4ds.had.co.nz/tidy-data.html
   - text: Data transformation cheatsheet
     link: https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf
-  notes: 
+  suppmat: 
 
 
 - week: 4
@@ -79,7 +82,7 @@ schedule:
     link: https://tidyr.tidyverse.org/articles/pivot.html
   - text: tidyr rectangling
     link: https://tidyr.tidyverse.org/articles/rectangle.html
-  notes:
+  suppmat:
 
 - week: 4
   day: 3
@@ -93,7 +96,7 @@ schedule:
     link: http://r4ds.had.co.nz/iteration.html
   - text: purrr cheatsheet
     link: https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf
-  notes: 
+  suppmat: 
 
 - week: 5
   day: 1
@@ -105,7 +108,7 @@ schedule:
     link: http://r4ds.had.co.nz/data-visualisation.html
   - text: ggplot2 Reference
     link: http://ggplot2.tidyverse.org/reference/index.html
-  notes: 
+  suppmat: 
 
 - week: 5
   day: 3
@@ -113,7 +116,7 @@ schedule:
   slides:
   screencast: 
   readings:
-  notes:
+  suppmat:
 
 - week: 6
   day: 1
@@ -127,7 +130,7 @@ schedule:
     link: https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html
   - text: R4DS - Strings
     link: https://r4ds.had.co.nz/strings.html
-  notes: 
+  suppmat: 
 
 - week: 6
   day: 3
@@ -137,7 +140,7 @@ schedule:
   readings:
   - text: rvest - selector gadget vignette
     link: https://rvest.tidyverse.org/articles/articles/selectorgadget.html
-  notes: 
+  suppmat: 
 
 - week: 7
   day: 1
@@ -171,8 +174,8 @@ schedule:
     link: https://rstats.wtf/project-oriented-workflow.html
   - text: fs comparison
     link: https://fs.r-lib.org/articles/function-comparisons.html
-  notes: <a href="https://youtu.be/CfgnwfgiuoA">Scraping details</a>
-
+  suppmat: 
+ 
 - week: 8
   day: 3
   lecture: "make"
@@ -183,7 +186,7 @@ schedule:
     link: https://kbroman.org/minimal_make/
   - text: Why use make
     link: https://bost.ocks.org/mike/make/
-  notes: 
+  suppmat: 
 
 - week: 9
   day: 1
@@ -202,7 +205,7 @@ schedule:
     link: https://cran.r-project.org/web/packages/dbplyr/vignettes/sql-translation.html
   - text: dbplyr Vignette
     link: https://cran.r-project.org/web/packages/dbplyr/vignettes/dbplyr.html
-  notes: 
+  suppmat: 
   
 
 - week: 11
@@ -228,7 +231,7 @@ schedule:
     link: http://shiny.rstudio.com/gallery/widget-gallery.html
   - text: Mastering Shiny
     link: https://mastering-shiny.org/
-  notes: 
+  suppmat: 
 
 - week: 12
   day: 1
@@ -253,7 +256,7 @@ schedule:
     link: https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf
   - text: "furrr"
     link: https://furrr.futureverse.org/
-  notes: 
+  suppmat: 
 
 - week: 13
   day: 1
@@ -263,7 +266,7 @@ schedule:
   readings:
   - text: "sf Vignettes"
     link: https://cran.r-project.org/web/packages/sf/vignettes/
-  notes: 
+  suppmat: 
   
 - week: 13
   day: 3
@@ -273,14 +276,14 @@ schedule:
   readings:
   - text: "Tidy Models - Get Started"
     link: https://www.tidymodels.org/start/
-  notes: 
+  suppmat: 
 
 - week: 14
   day: 1
   lecture: "More Tidy Models"
   screencast: 
   slides:
-  notes: 
+  suppmat: 
 
 - week: 14
   day: 3
@@ -296,14 +299,14 @@ schedule:
     link: https://roxygen2.r-lib.org/
   - text: testthat
     link: https://testthat.r-lib.org/
-  notes: 
+  suppmat: 
   
 - week: 15
   day: 1
   lecture: "Rcpp"
   screencast: 
   slides:
-  notes:
+  suppmat:
   readings:
   - text: Rcpp Gallery
     link: https://gallery.rcpp.org/
