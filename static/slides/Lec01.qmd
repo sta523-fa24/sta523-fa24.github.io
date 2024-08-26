@@ -2,7 +2,7 @@
 title: "Welcome & Syllabus"
 subtitle: "Lecture 01"
 author: "Dr. Colin Rundel"
-footer: "Sta 323 - Spring 2024"
+footer: "Sta 523 - Fall 2024"
 format:
   live-revealjs:
     theme: slides.scss
@@ -63,7 +63,7 @@ options(
   - Wednesdays, 10:05 am - 11:20 am
   
   
-* Labs (weekly) - Reuben-Cooke Building 129
+* Labs (weekly) - Old Chemistry 116
   - Fridays, 10:05 am - 11:20 am
 
 
