@@ -163,6 +163,10 @@ schedule:
 
 - week: 8
   day: 1
+  lecture: "<i>No class - Fall break</i>"
+
+- week: 8
+  day: 3
   lecture: "Building APIs with R (plumber)"
   slides:
   screencast:
@@ -172,8 +176,8 @@ schedule:
   - text: plumber webinar
     link: https://posit.co/resources/videos/expanding-r-horizons-integrating-r-with-plumber-apis/
 
-- week: 8
-  day: 3
+- week: 9
+  day: 1
   lecture: "filesystems, Dennys & LQ scraping"
   screencast: 
   slides:
@@ -185,7 +189,7 @@ schedule:
   suppmat: 
 
 - week: 9
-  day: 1
+  day: 3
   lecture: "make"
   slides:
   screencast: 
@@ -195,13 +199,6 @@ schedule:
   - text: Why use make
     link: https://bost.ocks.org/mike/make/
   suppmat: 
-
-- week: 9
-  day: 3
-  lecture: "HW4 exta lab session"
-  slides:
-  screencast:
-  readings:
 
 - week: 10
   day: 1
