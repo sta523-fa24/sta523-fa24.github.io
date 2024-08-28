@@ -25,7 +25,11 @@ schedule:
   - text: Adv-R - Data Structures
     link: http://adv-r.had.co.nz/Data-structures.html
   suppmat:
-
+  - text: Python Built-in Types
+    link: https://docs.python.org/3/library/stdtypes.html
+  - text: An Informal Introduction to Python
+    link: https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator
+    
 - week: 1
   day: 5
   lecture: "<i>No lab</i>"
