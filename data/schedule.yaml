@@ -26,15 +26,23 @@ schedule:
     link: http://adv-r.had.co.nz/Data-structures.html
   suppmat:
 
+- week: 1
+  day: 5
+  lecture: "<i>No lab</i>"
+
 - week: 2
   day: 1
+  lecture: "<i>No class - labor day</i>"
+
+- week: 2
+  day: 3
   lecture: "Error checking, functions, and loops"
   slides:
   screencast: 
   suppmat:
-  
-- week: 2
-  day: 3
+
+- week: 3
+  day: 1
   lecture: "Lists, Attributes, & S3"
   slides:
   screencast: 
@@ -44,7 +52,7 @@ schedule:
   suppmat: 
 
 - week: 3
-  day: 1
+  day: 3
   lecture: "Matrices, data frames, & subsetting"
   slides:
   screencast: 
@@ -53,8 +61,8 @@ schedule:
     link: http://adv-r.had.co.nz/Subsetting.html
   suppmat: 
 
-- week: 3
-  day: 3
+- week: 4
+  day: 1
   lecture: "Tidy data & dplyr"
   slides:
   screencast: 
@@ -68,9 +76,8 @@ schedule:
     link: https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf
   suppmat: 
 
-
 - week: 4
-  day: 1
+  day: 3
   lecture: "tidyr"
   slides:
   screencast: 
@@ -81,8 +88,8 @@ schedule:
     link: https://tidyr.tidyverse.org/articles/rectangle.html
   suppmat:
 
-- week: 4
-  day: 3
+- week: 5
+  day: 1
   lecture: "Functional programming & purrr"
   slides:
   screencast: 
@@ -96,7 +103,7 @@ schedule:
   suppmat: 
 
 - week: 5
-  day: 1
+  day: 3
   lecture: "ggplot2"
   slides:
   screencast: 
@@ -107,8 +114,8 @@ schedule:
     link: http://ggplot2.tidyverse.org/reference/index.html
   suppmat: 
 
-- week: 5
-  day: 3
+- week: 6
+  day: 1
   lecture: "Visualization Design"
   slides:
   screencast: 
@@ -116,7 +123,7 @@ schedule:
   suppmat:
 
 - week: 6
-  day: 1
+  day: 3
   lecture: "Text processing & Regular expressions"
   slides:
   screencast: 
@@ -129,8 +136,8 @@ schedule:
     link: https://r4ds.had.co.nz/strings.html
   suppmat: 
 
-- week: 6
-  day: 3
+- week: 7
+  day: 1
   lecture: "Web scraping"
   slides:
   screencast: 
@@ -140,7 +147,7 @@ schedule:
   suppmat: 
 
 - week: 7
-  day: 1
+  day: 3
   lecture: "Web APIs"
   slides:
   screencast: 
@@ -150,8 +157,8 @@ schedule:
   - text: httr - Best practices for API packages
     link: https://httr.r-lib.org/articles/api-packages.html
 
-- week: 7
-  day: 3
+- week: 8
+  day: 1
   lecture: "Building APIs with R (plumber)"
   slides:
   screencast:
@@ -162,7 +169,7 @@ schedule:
     link: https://posit.co/resources/videos/expanding-r-horizons-integrating-r-with-plumber-apis/
 
 - week: 8
-  day: 1
+  day: 3
   lecture: "filesystems, Dennys & LQ scraping"
   screencast: 
   slides:
@@ -172,9 +179,9 @@ schedule:
   - text: fs comparison
     link: https://fs.r-lib.org/articles/function-comparisons.html
   suppmat: 
- 
-- week: 8
-  day: 3
+
+- week: 9
+  day: 1
   lecture: "make"
   slides:
   screencast: 
@@ -186,14 +193,14 @@ schedule:
   suppmat: 
 
 - week: 9
-  day: 1
+  day: 3
   lecture: "HW4 exta lab session"
   slides:
   screencast:
   readings:
 
 - week: 10
-  day: 3
+  day: 1
   lecture: "Databases & dplyr"
   slides:
   screencast: 
@@ -203,10 +210,9 @@ schedule:
   - text: dbplyr Vignette
     link: https://cran.r-project.org/web/packages/dbplyr/vignettes/dbplyr.html
   suppmat: 
-  
 
-- week: 11
-  day: 1
+- week: 10
+  day: 3
   lecture: "SQL & Indexes"
   slides:
   screencast: 
@@ -217,7 +223,7 @@ schedule:
     link: https://gist.github.com/mattmc3/38a85e6a4ca1093816c08d4815fbebfb
 
 - week: 11
-  day: 3
+  day: 1
   lecture: "Shiny"
   slides:
   screencast: 
@@ -230,8 +236,8 @@ schedule:
     link: https://mastering-shiny.org/
   suppmat: 
 
-- week: 12
-  day: 1
+- week: 11
+  day: 3
   lecture: "bslib & dashboards"
   slides:
   screencast: 
@@ -242,9 +248,9 @@ schedule:
     link: https://posit-conf-2023.github.io/shiny-r-dashboard/
   - text: Awesome Shiny Extensions
     link: https://github.com/nanxstats/awesome-shiny-extensions
-    
+
 - week: 12
-  day: 3
+  day: 1
   lecture: "Profiling & Parallelization"
   slides:
   screencast: 
@@ -255,8 +261,8 @@ schedule:
     link: https://furrr.futureverse.org/
   suppmat: 
 
-- week: 13
-  day: 1
+- week: 12
+  day: 3
   lecture: "Spatial data"
   slides:
   screencast: 
@@ -264,9 +270,9 @@ schedule:
   - text: "sf Vignettes"
     link: https://cran.r-project.org/web/packages/sf/vignettes/
   suppmat: 
-  
+
 - week: 13
-  day: 3
+  day: 1
   lecture: "Tidy Models"
   screencast: 
   slides:
@@ -275,15 +281,15 @@ schedule:
     link: https://www.tidymodels.org/start/
   suppmat: 
 
-- week: 14
-  day: 1
+- week: 13
+  day: 3
   lecture: "More Tidy Models"
   screencast: 
   slides:
   suppmat: 
 
 - week: 14
-  day: 3
+  day: 1
   lecture: "R Packages"
   slides:
   screencast:
@@ -297,17 +303,21 @@ schedule:
   - text: testthat
     link: https://testthat.r-lib.org/
   suppmat: 
-  
-- week: 15
-  day: 1
-  lecture: "Rcpp"
-  screencast: 
-  slides:
-  suppmat:
-  readings:
-  - text: Rcpp Gallery
-    link: https://gallery.rcpp.org/
-  - text: Advanced R - Rcpp
-    link: https://adv-r.hadley.nz/rcpp.html
-  - text: Seamless R and C++ Integration with Rcpp
-    link: https://link.springer.com/book/10.1007/978-1-4614-6868-4
+
+- week: 14
+  day: 3
+  lecture: "<i>No class - Thanksgiving break</i>"
+
+#- week: 14
+#  day: 3
+#  lecture: "Rcpp"
+#  screencast: 
+#  slides:
+#  suppmat:
+#  readings:
+#  - text: Rcpp Gallery
+#    link: https://gallery.rcpp.org/
+#  - text: Advanced R - Rcpp
+#    link: https://adv-r.hadley.nz/rcpp.html
+#  - text: Seamless R and C++ Integration with Rcpp
+#    link: https://link.springer.com/book/10.1007/978-1-4614-6868-4
