@@ -41,10 +41,14 @@ schedule:
 - week: 2
   day: 3
   lecture: "Error checking, functions, and loops"
-  slides:
+  slides: Lec03
   screencast: 
   suppmat:
-
+  - text: Control flow
+    link: https://docs.python.org/3/tutorial/controlflow.html
+  - text: Errors and Exceptions
+    link: https://docs.python.org/3/tutorial/errors.html
+  
 - week: 3
   day: 1
   lecture: "Lists, Attributes, & S3"

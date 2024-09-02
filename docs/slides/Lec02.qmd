@@ -13,6 +13,7 @@ revealjs-plugins:
   - drop
 execute:
   echo: true
+  warning: true
 engine: knitr
 ---
 
