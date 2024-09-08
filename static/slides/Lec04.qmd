@@ -848,6 +848,11 @@ function again, what has changed?
 :::
 ::::
 
+```{r}
+#| echo: false
+countdown::countdown(5)
+```
+
 
 ## Conclusions?
 
