@@ -2,7 +2,7 @@
 title: "Lists, Attributes, & S3"
 subtitle: "Lecture 04"
 author: "Dr. Colin Rundel"
-footer: "Sta 323 - Spring 2024"
+footer: "Sta 523 - Fall 2024"
 format:
   live-revealjs:
     theme: slides.scss
@@ -15,6 +15,9 @@ execute:
   echo: true
   warning: true
 engine: knitr
+webr:
+  packages:
+    - jsonlite
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
@@ -182,12 +185,12 @@ Vector (atomic or generic) names can be any valid R character vector values (as 
 
 
 
-## Exercise 1
+## Exercise 1 {.scrollable}
 
 Represent the following JSON data as a list in R.
 
 :::: {.columns .small}
-::: {.column width='50%'}
+::: {.column width='40%'}
 ```json
 {
   "firstName": "John",
@@ -212,7 +215,7 @@ Represent the following JSON data as a list in R.
 }
 ```
 :::
-::: {.column width='50%'}
+::: {.column width='60%'}
 ```{webr}
 #| min-lines: 16
 #| max-lines: 16
@@ -227,7 +230,7 @@ json = list(
 
 ```{r}
 #| echo: false
-countdown::countdown(5)
+countdown::countdown(5,left = "0", right=NULL)
 ```
 
 
@@ -808,7 +811,7 @@ shuffle( letters[1:5] )
 shuffle( factor(letters[1:5]) )
 ```
 
-## Exercise 2 - classes, modes, and types
+## Exercise 2 - classes, modes, and types {.scrollable}
 
 :::: {.columns .medium}
 ::: {.column width='50%'}
@@ -835,16 +838,15 @@ report(1L)
 ```
 :::
 ::: {.column width='50%'}
-Below we have defined an S3 method called `report`, it is designed to return a message about the type/mode/class of an object passed to it.
+On the right we have defined an S3 method called `report`, it is designed to return a message about the type/mode/class of an object passed to it.
 
 * Try running the `report` function with different input types, what happens? 
 
-* Now run `rm("report.integer")` in your Console and try using the `report`
-function again, what has changed? 
+* Now comment out the code for `report.integer` and try rerunning the code, what has changed? 
 
 * What does this tell us about S3, types, modes, and classes?
 
-* What if we also `rm("report.double")`?
+* What if we also comment out `report.double`?
 :::
 ::::
 
