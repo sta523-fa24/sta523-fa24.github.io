@@ -625,7 +625,7 @@ y[character()]
 ::::
 
 
-## Exercise 1
+## Exercise 1 {.scrollable}
 
 ::: {.medium}
 Below are 100 values, write down how you would create a subset to accomplish each of the following:
