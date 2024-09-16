@@ -84,6 +84,8 @@ schedule:
   screencast: 
   suppmat:
   readings:
+  - text: Tidy Data paper
+    link: https://vita.had.co.nz/papers/tidy-data.pdf
   - text: dplyr Vignette
     link: https://dplyr.tidyverse.org/articles/dplyr.html
   - text: R4DS - tidy data
