@@ -280,7 +280,7 @@ methods(class="tbl")
 
 ## Tibble support?
 
-Tibbles are just more specialized data frames, and will fall back to the base data frame methods when needed.
+Tibbles are just specialized data frames, and will fall back to the base data frame methods when needed.
 
 ```{r}
 d = tibble(
@@ -439,9 +439,15 @@ The current version of RStudio on the departmental servers is v4.4.1 so you are 
 
 * `|>` supports an equivalent to `.` using `_` as of R v4.2 (but only for named arguments)
 
+  ```r
+  data.frame(a = 1:3, b = 3:1) |> 
+    lm(a~b, data=_)
+  ```
+
 . . .
 
 Generally we will prefer the base pipe in this class, but using either is fine.
+
 
 #
 
@@ -468,7 +474,7 @@ Core single data frame functions / verbs:
 :::
 
 
-## dplyr mental model / rules
+## dplyr rules
 
 1. First argument is *always* a data frame
 
@@ -478,7 +484,7 @@ Core single data frame functions / verbs:
 
 4. Don't modify in place
 
-5. Magic via lazy evaluation and S3
+5. Magic via non-standard evaluation + lazy evaluation and S3
 
 
 ## Example Data
