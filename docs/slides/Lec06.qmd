@@ -18,6 +18,7 @@ engine: knitr
 webr:
   packages:
     - tidyverse
+    - nuyflights13
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
