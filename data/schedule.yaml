@@ -91,7 +91,7 @@ schedule:
   - text: Data transformation cheatsheet
     link: https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf
   suppmat: 
-  - text: Python for Data Analysis (Early Release)
+  - text: Python for Data Analysis
     link: https://wesmckinney.com/book/pandas-basics.html
   - text: Group By
     link: https://pandas.pydata.org/docs/user_guide/groupby.html
