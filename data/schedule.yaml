@@ -58,6 +58,8 @@ schedule:
   - text: Adv R - OO Field Guide - S3
     link: http://adv-r.had.co.nz/OO-essentials.html#s3
   suppmat: 
+  - text: Lists, Sets and Dicts
+    link: https://docs.python.org/3/tutorial/datastructures.html
 
 - week: 3
   day: 3
@@ -68,6 +70,12 @@ schedule:
   - text: Adv-R - Subsetting
     link: http://adv-r.had.co.nz/Subsetting.html
   suppmat: 
+  - text: NumPy API Reference
+    link: https://numpy.org/doc/stable/reference/index.html
+  - text: Broadcasting
+    link: https://numpy.org/doc/stable/user/basics.broadcasting.html
+  - text: Advanced indexing
+    link: https://numpy.org/doc/stable/user/basics.indexing.html#advanced-indexing
 
 - week: 4
   day: 1
@@ -83,7 +91,11 @@ schedule:
   - text: Data transformation cheatsheet
     link: https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf
   suppmat: 
-
+  - text: Python for Data Analysis (Early Release)
+    link: https://wesmckinney.com/book/pandas-basics.html
+  - text: Group By
+    link: https://pandas.pydata.org/docs/user_guide/groupby.html
+    
 - week: 4
   day: 3
   lecture: "tidyr"
@@ -95,6 +107,8 @@ schedule:
   - text: tidyr rectangling
     link: https://tidyr.tidyverse.org/articles/rectangle.html
   suppmat:
+  - text: Reshaping
+    link: https://pandas.pydata.org/docs/user_guide/reshaping.
 
 - week: 5
   day: 1
