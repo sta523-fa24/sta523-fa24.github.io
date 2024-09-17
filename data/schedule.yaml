@@ -101,7 +101,7 @@ schedule:
 - week: 4
   day: 3
   lecture: "tidyr"
-  slides:
+  slides: Lec07
   screencast: 
   readings:
   - text: tidyr pivoting
