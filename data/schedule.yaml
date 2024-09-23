@@ -115,7 +115,7 @@ schedule:
 - week: 5
   day: 1
   lecture: "Functional programming & purrr"
-  slides:
+  slides: Lec08
   screencast: 
   readings:
   - text: Purrr tutorial
