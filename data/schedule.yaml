@@ -137,6 +137,12 @@ schedule:
   - text: ggplot2 Reference
     link: http://ggplot2.tidyverse.org/reference/index.html
   suppmat: 
+  - text: matplotlib tutorials
+    link: https://matplotlib.org/stable/tutorials/index
+  - text: seaborn user guide
+    link: https://seaborn.pydata.org/tutorial.html
+  - text: plotnine
+    link: https://plotnine.readthedocs.io/en/stable/
 
 - week: 6
   day: 1

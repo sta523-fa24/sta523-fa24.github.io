@@ -16,22 +16,22 @@ in_unit_circle = function(d) {
 }
 
 
-draw_points(1e5) %>%
-  in_unit_circle() %>%
-  sum() %>%
-  {4 * . / 1e5}
+draw_points(1e3) |>
+  in_unit_circle() |>
+  sum() |>
+  (\(x) {4 * x / 1e5})()
 
 
 tibble(
   n = 10^(1:6)
-) %>%
+) |>
   mutate(
     draws = purrr::map(n, draw_points),
     n_in_ucirc = purrr::map_int(draws, ~sum(in_unit_circle(.x))),
     pi_approx = 4 * n_in_ucirc / n,
     pi_error = abs(pi - pi_approx)
-  ) %>%
-  as.data.frame()
+  ) |>
+  as_tibble()
 
 
 ## Example 2 - dicog
@@ -40,7 +40,7 @@ View(repurrrsive::discog)
 
 tibble(disc = repurrrsive::discog)
 
-tibble(disc = repurrrsive::discog) %>%
+tibble(disc = repurrrsive::discog) |>
   mutate(
     id     = purrr::map_int(disc, "id"),
     year   = purrr::map_int(disc, c("basic_information", "year")),
@@ -50,7 +50,7 @@ tibble(disc = repurrrsive::discog) %>%
   )
 
 
-tibble(disc = repurrrsive::discog) %>% 
+tibble(disc = repurrrsive::discog) |> 
   hoist(
     disc, 
     id = "id",
