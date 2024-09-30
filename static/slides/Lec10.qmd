@@ -366,6 +366,7 @@ ggplot(tidy_anscombe, aes(x = x, y = y, color = as.factor(group))) +
 
 ::: small
 ```{r datasaurus}
+#| out-width: 85%
 ggplot(datasauRus::datasaurus_dozen, aes(x = x, y = y)
 ) +
   geom_point() +
@@ -446,6 +447,8 @@ simpsons |>
   ggplot(aes(x=x, y=y)) +
     geom_point(aes(color=1L)) +
     geom_smooth(method="lm", se=FALSE, color="black", formula=y~x) +
+    #ggpmisc::stat_poly_line() +
+    ggpmisc::stat_poly_eq() +
     guides(color = "none")
 ```
 
@@ -751,9 +754,7 @@ knitr::include_graphics("imgs/vis_bls.gif")
 
 -   Tidy tuesday - https://github.com/rfordatascience/tidytuesday
 
--   Flowing data - https://flowingdata.com/
-
--   Twitter - #dataviz, #tidytuesday
+-   Twitter / Bluesky / Mastodon - #dataviz, #tidytuesday
 
 -   Books:
 
@@ -766,4 +767,6 @@ knitr::include_graphics("imgs/vis_bls.gif")
 
 Above materials are derived in part from the following sources:
 
--   Visualization training materials developed by Angela Zoss and Eric Monson, [Duke DVS](http://libcms.oit.duke.edu/data/)
+- sVisualization training materials originally developed by Angela Zoss and Eric Monson
+
+- [Duke Center for Data and Visualization Sciences](https://library.duke.edu/data)
