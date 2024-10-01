@@ -155,7 +155,7 @@ schedule:
 - week: 6
   day: 3
   lecture: "Text processing & Regular expressions"
-  slides:
+  slides: Lec11
   screencast: 
   readings:
   - text: stringr Cheat Sheet, 
@@ -165,7 +165,11 @@ schedule:
   - text: R4DS - Strings
     link: https://r4ds.had.co.nz/strings.html
   suppmat: 
-
+  - text: string — Common string operations
+    link: https://docs.python.org/3/library/string.html
+  - text: re — Regular expression operations
+    link: https://docs.python.org/3/library/re.html
+    
 - week: 7
   day: 1
   lecture: "Web scraping"
