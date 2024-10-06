@@ -173,13 +173,15 @@ schedule:
 - week: 7
   day: 1
   lecture: "Web scraping"
-  slides:
+  slides: Lec12
   screencast: 
   readings:
   - text: rvest - selector gadget vignette
     link: https://rvest.tidyverse.org/articles/articles/selectorgadget.html
   suppmat: 
-
+  - text: BeautifulSoup
+    link: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+    
 - week: 7
   day: 3
   lecture: "Web APIs"
