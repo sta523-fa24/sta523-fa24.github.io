@@ -185,13 +185,16 @@ schedule:
 - week: 7
   day: 3
   lecture: "Web APIs"
-  slides:
+  slides: Lec13
   screencast: 
   readings:
   - text: httr2
     link: https://httr2.r-lib.org/
   - text: httr - Best practices for API packages
     link: https://httr.r-lib.org/articles/api-packages.html
+  suppmat:
+  - text: Requests
+    link: https://requests.readthedocs.io/en/latest/
 
 - week: 8
   day: 1
