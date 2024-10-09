@@ -190,8 +190,6 @@ httpuv::decodeURI("%CE%A3")
 
 
 
-
-
 ## GitHub API
 
 GitHub provides a REST API that allows you to interact with most of the data available on the website.
