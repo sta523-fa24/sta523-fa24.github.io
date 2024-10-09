@@ -188,55 +188,8 @@ httpuv::decodeURI("%CE%A3")
     - cacheability
 
 
-## HTTP Methods / Verbs
 
-* *GET* - fetch a resource
 
-* *POST* - create a new resource
-
-* *PUT* - full update of a resource
-
-* *PATCH* - partial update of a resource
-
-* *DELETE* - delete a resource.
-
-Less common verbs: *HEAD*, *TRACE*, *OPTIONS*.
-
-::: {.aside}
-Based on [HTTP: The Protocol Every Web Developer Must Know](http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)
-:::
-
-## Structure of an HTTP Request
-
-<br/>
-
-![](imgs/HTTP_Request.png){fig-align="center" width="100%"}
-
-::: {.aside}
-[Source](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/http_basics.html)
-:::
-
-## Structure of an HTTP Response
-
-<br/>
-
-![](imgs/HTTP_Response.png){fig-align="center" width="100%"}
-
-::: {.aside}
-[Source](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/http_basics.html)
-:::
-
-## Status Codes
-
-* 1xx: Informational Messages
-
-* 2xx: Successful
-
-* 3xx: Redirection
-
-* 4xx: Client Error
-
-* 5xx: Server Error
 
 
 ## GitHub API
@@ -285,7 +238,36 @@ There is extensive documentation and a huge number of endpoints to use - almost 
     * common body encoding (e.g. json, etc.)
 
 
-## request objects
+## Structure of an HTTP Request
+
+<br/>
+
+![](imgs/HTTP_Request.png){fig-align="center" width="100%"}
+
+::: {.aside}
+[Source](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/http_basics.html)
+:::
+
+## HTTP Methods / Verbs
+
+* *GET* - fetch a resource
+
+* *POST* - create a new resource
+
+* *PUT* - full update of a resource
+
+* *PATCH* - partial update of a resource
+
+* *DELETE* - delete a resource.
+
+Less common verbs: *HEAD*, *TRACE*, *OPTIONS*.
+
+::: {.aside}
+Based on [HTTP: The Protocol Every Web Developer Must Know](http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)
+:::
+
+
+## httr2 request objects
 
 A new request object is constructed via `request()` which is then modifed via `req_*()` functions
 
@@ -306,7 +288,33 @@ Some useful functions:
 * `req_dry_run()` - shows the exact request that will be made
 
 
-## response objects
+
+
+## Structure of an HTTP Response
+
+<br/>
+
+![](imgs/HTTP_Response.png){fig-align="center" width="100%"}
+
+::: {.aside}
+[Source](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/http_basics.html)
+:::
+
+## Status Codes
+
+* 1xx: Informational Messages
+
+* 2xx: Successful
+
+* 3xx: Redirection
+
+* 4xx: Client Error
+
+* 5xx: Server Error
+
+
+
+## httr2 response objects
 
 Once constructed a request is made via `req_perform()` which returns a response object (the most recent response can also be retrieved via `last_response()`). Content of the response are accessed via the `resp_*()` functions
 

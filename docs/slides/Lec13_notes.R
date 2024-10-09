@@ -80,11 +80,14 @@ request("https://api.github.com/orgs/sta523-fa24/repos") |>
 
 request("https://api.github.com/orgs/sta523-fa24/repos") |>
   req_auth_bearer_token(gitcreds::gitcreds_get()$password) |>
-  req_url_query(per_page = 100) |>
+  #req_url_query(per_page = 100) |>
+  req_url_query(page = 2) |>
   req_perform() |>
-  resp_body_json() |>
+  resp_body_json() |> 
   map_chr("full_name")
 
+last_response() |> 
+  resp_headers("link")
 
 ### Create a gist ----
 
