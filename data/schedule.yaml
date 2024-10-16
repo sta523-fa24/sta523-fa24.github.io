@@ -203,7 +203,7 @@ schedule:
 - week: 8
   day: 3
   lecture: "Building APIs with R (plumber)"
-  slides:
+  slides: Lec14
   screencast:
   readings:
   - text: plumber documentation
