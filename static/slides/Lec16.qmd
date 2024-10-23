@@ -40,9 +40,9 @@ knitr::opts_chunk$set(
 
 * Originally created by Stuart Feldman in 1976 at Bell Labs
 
-* Almost universally available (all flavors of unix / linux / MacOS / Windows w/ RTools)
+* Almost universally available (all flavors of unix / linux / MacOS / Windows via RTools)
 
-* Dependencies are specified using a `Makefile` with a simple syntax
+* Dependencies are specified using a text-based `Makefile` with a simple syntax
 
 
 
@@ -57,9 +57,10 @@ target1: depend1 depend2 depend3 ...
     step3
     ...
 
-depend1: depend1.1
-    step1.1
-    step1.2
+depend1: depend4 depend5
+    step1
+    step2
+    ...
 ```
 
 In the above example `target*` and `depend*` are all just files (given by a relative or absolute path).

@@ -1228,8 +1228,8 @@ Dr. Colin Rundel
 <li>Almost any process that has files as input and outputs can be automated via make</li>
 </ul></li>
 <li><p>Originally created by Stuart Feldman in 1976 at Bell Labs</p></li>
-<li><p>Almost universally available (all flavors of unix / linux / MacOS / Windows w/ RTools)</p></li>
-<li><p>Dependencies are specified using a <code>Makefile</code> with a simple syntax</p></li>
+<li><p>Almost universally available (all flavors of unix / linux / MacOS / Windows via RTools)</p></li>
+<li><p>Dependencies are specified using a text-based <code>Makefile</code> with a simple syntax</p></li>
 </ul>
 </section>
 <section id="makefile" class="slide level2">
@@ -1241,9 +1241,10 @@ Dr. Colin Rundel
 <span id="cb1-4"><a href></a>    step3</span>
 <span id="cb1-5"><a href></a>    ...</span>
 <span id="cb1-6"><a href></a></span>
-<span id="cb1-7"><a href></a>depend1: depend1.1</span>
-<span id="cb1-8"><a href></a>    step1.1</span>
-<span id="cb1-9"><a href></a>    step1.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href></a>depend1: depend4 depend5</span>
+<span id="cb1-8"><a href></a>    step1</span>
+<span id="cb1-9"><a href></a>    step2</span>
+<span id="cb1-10"><a href></a>    ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In the above example <code>target*</code> and <code>depend*</code> are all just files (given by a relative or absolute path).</p>
 </section>
 <section id="makefile-basic-example" class="slide level2">
