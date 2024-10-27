@@ -238,7 +238,7 @@ schedule:
 - week: 10
   day: 1
   lecture: "Databases & dplyr"
-  slides:
+  slides: Lec17
   screencast: 
   readings:
   - text: SQL Translation
@@ -246,7 +246,8 @@ schedule:
   - text: dbplyr Vignette
     link: https://cran.r-project.org/web/packages/dbplyr/vignettes/dbplyr.html
   suppmat: 
-
+  - text: Python Database API Specification
+    link: https://peps.python.org/pep-0249/
 - week: 10
   day: 3
   lecture: "SQL & Indexes"
