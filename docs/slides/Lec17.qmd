@@ -4,13 +4,11 @@ subtitle: "Lecture 17"
 author: "Dr. Colin Rundel"
 footer: "Sta 523 - Fall 2024"
 format:
-  live-revealjs:
+  revealjs:
     theme: slides.scss
     transition: fade
     slide-number: true
     self-contained: true
-revealjs-plugins:
-  - drop
 execute:
   echo: true
   warning: true
@@ -19,9 +17,6 @@ webr:
   packages:
     - jsonlite
 ---
-
-{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
-
 
 ```{r setup}
 #| message: False
@@ -160,6 +155,25 @@ See [r-dbi.org](https://www.r-dbi.org/) for more details
 :::
 
 
+## DBI Backends
+
+DBI is a specification, not an implementation, and there are a number of packages that implement the DBI specification for different database systems. [Backends for R-DBI](https://r-dbi.org/backends/) lists all available backends, but some notable ones include:
+
+* `RPostgres`
+
+* `RMariaDB`
+
+* `RSQLite`
+
+* `odbc`
+
+* `bigrquery`
+
+* `duckdb`
+
+* `sparklyr`
+
+
 ## RSQLite
 
 Provides the implementation necessary to use DBI to interface with an SQLite database.
@@ -214,6 +228,8 @@ dbListTables(con)
 ```
 
 <p/>
+
+. . .
 
 ```{r}
 dbRemoveTable(con,"employs")
@@ -355,7 +371,7 @@ str(flight_tbl)
 ## Accessing existing tables
 
 ```{r}
-(dplyr::tbl(db, "flights"))
+dplyr::tbl(db, "flights")
 ```
 
 
@@ -548,7 +564,7 @@ There are two packages that implement this in R which take very different approa
 
 * [`tidyquery`](https://github.com/ianmcook/tidyquery) - this package parses your SQL code using the `queryparser` package and then translates the result into R / dplyr code.
 
-* [`sqldf`](https://github.com/ggrothendieck/sqldf) - transparently creates a database with data and then runs the query using that database. Defaults to SQLite but other backends are available.
+* [`sqldf`](https://github.com/ggrothendieck/sqldf) - transparently creates a database with the data and then runs the query using that database. Defaults to SQLite but other backends are available.
 
 
 ## tidyquery
