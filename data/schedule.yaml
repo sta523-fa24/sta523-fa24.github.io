@@ -253,12 +253,12 @@ schedule:
     
 - week: 10
   day: 3
-  lecture: "SQL & Indexes"
-  slides:
+  lecture: "DuckDB & SQL"
+  slides: Lec18
   screencast: 
   readings:
-  - text: SQLite Syntax
-    link: https://www.sqlite.org/lang.html
+  - text: DuckDB SQL Reference
+    link: https://duckdb.org/docs/sql/introduction
   - text: Modern SQL Style Guide
     link: https://gist.github.com/mattmc3/38a85e6a4ca1093816c08d4815fbebfb
 
