@@ -69,12 +69,16 @@ dbListTables(con)
 
 ##
 
+::: {.medium}
 ```{r}
-dbGetQuery(con, "SELECT * FROM flights")
+dbGetQuery(con, "SELECT * FROM flights") |>
+  as_tibble()
 ```
+:::
 
-. . .
+##
 
+::: {.medium}
 ```{r}
 #| message: false
 library(dplyr)
@@ -83,8 +87,9 @@ tbl(con, "flights") |>
   count(origin, dest) |>
   arrange(desc(n))
 ```
+:::
 
-# CLI
+# DuckDB CLI
 
 ## Connecting via CLI
 
@@ -144,6 +149,7 @@ A full list of available dot commands can be found [here](https://duckdb.org/doc
 #| code-line-numbers: false
 
 D SELECT * FROM employees;
+
 ## ┌─────────┬───────────────────┬─────────┬────────────┐
 ## │  name   │       email       │ salary  │    dept    │
 ## │ varchar │      varchar      │ double  │  varchar   │
@@ -160,7 +166,7 @@ D SELECT * FROM employees;
 
 ## Output formats
 
-The format of duckdb's output (in the CLI) is controled via `.mode` -  the default is `duckbox`, see a list of [other modes](https://duckdb.org/docs/api/cli/output_formats.html). 
+The format of duckdb's output (in the CLI) is controled via `.mode` -  the default is `duckbox`, see other possible [output formats](https://duckdb.org/docs/api/cli/output_formats.html). 
 
 :::: {.columns .small}
 ::: {.column width='50%'}
@@ -169,6 +175,7 @@ The format of duckdb's output (in the CLI) is controled via `.mode` -  the defau
 #| code-line-numbers: false
 D .mode csv
 D SELECT * FROM employees;
+
 ## name,email,salary,dept
 ## Alice,alice@company.com,52000.0,Accounting
 ## Bob,bob@company.com,40000.0,Accounting
@@ -186,6 +193,7 @@ D SELECT * FROM employees;
 #| code-line-numbers: false
 D .mode markdown
 D SELECT * FROM employees;
+
 ## | name  |       email       | salary  |    dept    |
 ## |-------|-------------------|--------:|------------|
 ## | Alice | alice@company.com | 52000.0 | Accounting |
@@ -242,6 +250,7 @@ We can subset for certain columns (and rename them) using `SELECT`
 #| eval: false
 #| code-line-numbers: false
 D SELECT name AS first_name, salary FROM employees;
+
 ## ┌────────────┬─────────┐
 ## │ first_name │ salary  │
 ## │  varchar   │ double  │
@@ -259,13 +268,16 @@ D SELECT name AS first_name, salary FROM employees;
 ## arrange() using ORDER BY
 
 
-We can sort our results by adding `ORDER BY` to our `SELECT` statement
+We can sort our results by adding `ORDER BY` to our `SELECT` statement and reverse the ordering by include `DESC`.
 
-::: {.small}
+:::: {.columns .small}
+::: {.column width='50%'}
 ```{sql}
 #| eval: false
 #| code-line-numbers: false
-D SELECT name AS first_name, salary FROM employees ORDER BY salary;
+D SELECT name AS first_name, salary FROM employees 
+  ORDER BY salary;
+
 ## ┌────────────┬─────────┐
 ## │ first_name │ salary  │
 ## │  varchar   │ double  │
@@ -280,15 +292,13 @@ D SELECT name AS first_name, salary FROM employees ORDER BY salary;
 ```
 :::
 
-. . .
-
-We can sort in the opposite order by adding `DESC` 
-
-::: {.small}
+::: {.column width='50%'}
 ```{sql}
 #| eval: false
 #| code-line-numbers: false
-SELECT name AS first_name, salary FROM employees ORDER BY salary DESC;
+D SELECT name AS first_name, salary FROM employees 
+  ORDER BY salary DESC;
+
 ## ┌────────────┬─────────┐
 ## │ first_name │ salary  │
 ## │  varchar   │ double  │
@@ -302,16 +312,19 @@ SELECT name AS first_name, salary FROM employees ORDER BY salary DESC;
 ## └────────────┴─────────┘
 ```
 :::
+::::
+
 
 ## filter() using WHERE
 
-We can filter rows by adding `WHERE` to our statements
+We can filter rows using a `WHERE` clause
 
 ::: {.medium}
 ```{sql}
 #| eval: false
 #| code-line-numbers: false
 D SELECT * FROM employees WHERE salary < 40000;
+
 ## ┌─────────┬───────────────────┬─────────┬────────────┐
 ## │  name   │       email       │ salary  │    dept    │
 ## │ varchar │      varchar      │ double  │  varchar   │
@@ -326,6 +339,7 @@ D SELECT * FROM employees WHERE salary < 40000;
 #| eval: false
 #| code-line-numbers: false
 D SELECT * FROM employees WHERE salary < 40000 AND dept = 'Sales';
+
 ## ┌─────────┬───────────────────┬─────────┬─────────┐
 ## │  name   │       email       │ salary  │  dept   │
 ## │ varchar │      varchar      │ double  │ varchar │
@@ -336,7 +350,7 @@ D SELECT * FROM employees WHERE salary < 40000 AND dept = 'Sales';
 ```
 :::
 
-## group_by() using GROUP BY
+## group_by() and summarize() using GROUP BY with aggregation functions
 
 We can create groups for the purpose of summarizing using `GROUP BY`. 
 
@@ -345,6 +359,7 @@ We can create groups for the purpose of summarizing using `GROUP BY`.
 #| eval: false
 #| code-line-numbers: false
 D SELECT dept, COUNT(*) AS n FROM employees GROUP BY dept;
+
 ## ┌────────────┬───────┐
 ## │    dept    │   n   │
 ## │  varchar   │ int64 │
@@ -358,7 +373,7 @@ D SELECT dept, COUNT(*) AS n FROM employees GROUP BY dept;
 
 ## head() using LIMIT
 
-We can limit the number of rows we get by using `LIMIT` 
+We can limit the number of results we get by using `LIMIT` 
 
 ::: {.medium}
 ```{sql}
@@ -376,32 +391,11 @@ D SELECT * FROM employees LIMIT 3;
 ```
 :::
 
-. . .
-
-and order results with `ORDER BY` with or without `DESC`
-
-::: {.medium}
-```{sql}
-#| eval: false
-#| code-line-numbers: false
-D SELECT * FROM employees ORDER BY name DESC LIMIT 3;
-## ┌─────────┬──────────────────┬─────────┬────────────┐
-## │  name   │      email       │ salary  │    dept    │
-## │ varchar │     varchar      │ double  │  varchar   │
-## ├─────────┼──────────────────┼─────────┼────────────┤
-## │ Frank   │ frank@comany.com │ 37000.0 │ Sales      │
-## │ Eve     │ eve@company.com  │ 44000.0 │ Sales      │
-## │ Dave    │ dave@company.com │ 33000.0 │ Accounting │
-## └─────────┴──────────────────┴─────────┴────────────┘
-```
-:::
-
-
 
 
 ## Exercise 1
 
-Using duckdb calculate the following quantities,
+Using duckdb calculate the following quantities for `employees.duckdb`,
 
 1. The total costs in payroll for this company
 
@@ -414,7 +408,7 @@ Using duckdb calculate the following quantities,
 
 ## Reading from CSV files
 
-DuckDB has a neat trick in that it can treat files as tables (for supported formats), this lets you query them without havign to explicitly read them into the database and create a table.
+DuckDB has a neat trick in that it can treat files as tables (for supported formats), this lets you query them without having to explicitly read them into the database and create a table.
 
 We can also make this explicit by using the `read_csv()` function, which is useful if we need to use custom options (e.g. specify a different delimeter)
 
@@ -464,7 +458,7 @@ If we wanted to explicitly create a table from the CSV file this is also possibl
 D .tables
 ## employees
 D CREATE TABLE phone AS
-    SELECT * FROM 'phone.csv';
+  SELECT * FROM 'phone.csv';
 D .tables
 ## employees  phone
 D SELECT * FROM phone;
@@ -480,19 +474,62 @@ D SELECT * FROM phone;
 ```
 
 
+## Views from CSV
+
+It is also possible to create a view from a file - this acts like a table but the data is not copied from the file
+
+```{sql}
+#| eval: false
+#| code-line-numbers: false
+D .tables
+## employees
+D CREATE VIEW phone_view AS
+  SELECT * FROM 'phone.csv';
+D .tables
+## employees  phone  phone_view
+D SELECT * FROM phone_view;
+## ┌─────────┬──────────────┐
+## │  name   │    phone     │
+## │ varchar │   varchar    │
+## ├─────────┼──────────────┤
+## │ Bob     │ 919 555-1111 │
+## │ Carol   │ 919 555-2222 │
+## │ Eve     │ 919 555-3333 │
+## │ Frank   │ 919 555-4444 │
+## └─────────┴──────────────┘
+```
+
+
+## Deleting tables and views
+
+Tables and views can be deleted using `DROP`
+
+```{sql}
+#| eval: false
+#| code-line-numbers: false
+D DROP TABLE phone;
+D DROP VIEW phone_view;
+```
+
 
 ## Joins - Default
 
 If not otherwise specified the default join in DuckDB will be an inner join - note that an `ON` or `USING` clause is required unless using `NATURAL`.
 
-::: {.small}
+::: {.medium}
 ```{sql}
 #| eval: false
 #| code-line-numbers: false
 D SELECT * FROM employees JOIN phone;
 ## Parser Error: syntax error at or near ";"
 ## LINE 1: SELECT * FROM employees JOIN phone;
+```
+
+```{sql}
+#| eval: false
+#| code-line-numbers: false
 D SELECT * FROM employees NATURAL JOIN phone;
+
 ## ┌─────────┬───────────────────┬─────────┬────────────┬──────────────┐
 ## │  name   │       email       │ salary  │    dept    │    phone     │
 ## │ varchar │      varchar      │ double  │  varchar   │   varchar    │
@@ -503,6 +540,8 @@ D SELECT * FROM employees NATURAL JOIN phone;
 ## │ Frank   │ frank@comany.com  │ 37000.0 │ Sales      │ 919 555-4444 │
 ## └─────────┴───────────────────┴─────────┴────────────┴──────────────┘
 ```
+:::
+
 
 
 ## Inner Join - Explicit
@@ -526,7 +565,9 @@ D SELECT * FROM employees JOIN phone ON employees.name = phone.name;
 
 . . .
 
-to avoid the duplicate `name` column we can use `USING` instead of `ON`
+::: {.medium}
+to avoid the duplicate `name` column we can specify `USING` instead of `ON`
+:::
 
 ::: {.small}
 ```{sql}
@@ -593,7 +634,9 @@ D SELECT * FROM employees LEFT JOIN phone ON employees.name = phone.name;
 
 . . .
 
-As above to avoid the duplicate `name` column we can use `USING`, or can be more selective about our returned columns,
+::: {.medium}
+duplicate `name` column can be avoided by more selective `SELECT`,
+:::
 
 ::: {.small}
 ```{sql}
@@ -659,8 +702,8 @@ We can nest tables within tables for the purpose of queries.
 #| eval: false
 #| code-line-numbers: false
 D SELECT * FROM (
-  SELECT * FROM employees NATURAL LEFT JOIN phone
-) combined WHERE phone IS NULL;
+    SELECT * FROM employees NATURAL LEFT JOIN phone
+  ) combined WHERE phone IS NULL;
 ## ┌─────────┬───────────────────┬─────────┬────────────┬─────────┐
 ## │  name   │       email       │ salary  │    dept    │  phone  │
 ## │ varchar │      varchar      │ double  │  varchar   │ varchar │
@@ -878,7 +921,7 @@ D SELECT sum(seats) FROM flights LEFT JOIN planes USING (tailnum);
 ```{sql}
 #| eval: false
 #| code-line-numbers: false
-D EXPLAIN  SELECT sum(seats) FROM flights LEFT JOIN planes USING (tailnum);
+D EXPLAIN SELECT sum(seats) FROM flights LEFT JOIN planes USING (tailnum);
 ## ┌─────────────────────────────┐
 ## │┌───────────────────────────┐│
 ## ││       Physical Plan       ││
@@ -919,7 +962,7 @@ D EXPLAIN  SELECT sum(seats) FROM flights LEFT JOIN planes USING (tailnum);
 ## └───────────────────────────┘└───────────────────────────┘
 ## Run Time (s): real 0.001 user 0.000547 sys 0.000000
 ```
-
+:::
 
 ## `EXPLAIN ANALYZE`
 
