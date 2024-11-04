@@ -83,16 +83,15 @@ Client / Browser
 ```{r shiny-anatomy}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "|3-8|4|6-8"
 library(shiny)
 
-shinyApp(
-  ui = list(),
+ui = list()
+
+server = function(input, output, session) {
   
-  server = function(input, output, session) {
-  
-  }
-)
+}
+
+shinyApp(ui = ui, server = server)
 ```
 
 ## Sidebar layout
