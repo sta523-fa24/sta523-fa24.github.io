@@ -83,7 +83,7 @@ It facilitates:
 
    * Shiny and R Markdown currently default to Bootstrap 3 and may continue to do so to maintain backwards compatibility.
 
-* **Creation of delightful and customizable Shiny dashboards**
+* Creation of delightful and customizable Shiny dashboards
 
    * The underlying UI components (e.g., cards, value boxes, sidebars, etc) are also designed to work in other contexts (e.g., in R Markdown).
 
