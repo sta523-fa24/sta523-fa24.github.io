@@ -59,7 +59,9 @@ d = tibble(
 
 ```{r}
 #| eval: false
-profvis::profvis(lm(y~., data=d))
+profvis::profvis({
+  lm(y~., data=d)
+})
 ```
 
 
