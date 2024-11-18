@@ -348,6 +348,12 @@ schedule:
   day: 3
   lecture: "<i>No class - Thanksgiving break</i>"
 
+- week: 16
+  day: 3
+  lecture: "<i>Final project due by 5 pm</i>"
+
+
+
 #- week: 14
 #  day: 3
 #  lecture: "Rcpp"
