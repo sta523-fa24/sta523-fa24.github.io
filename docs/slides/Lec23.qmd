@@ -143,6 +143,15 @@ summary(lm_b)
 :::
 ::::
 
+##
+
+::: {.small}
+```{r}
+summary(lm_tm$fit)
+```
+:::
+
+
 #
 
 ![](imgs/hex_broom.png){fig-align="center" width="75%"}
