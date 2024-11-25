@@ -299,6 +299,59 @@ There are many resources available to help you choose a license, including:
 :::
 
 
+# Package documentation
+
+## Documentation
+
+All R packages are expected to have documentation for all *exported* functions and data sets (this is a CRAN requirement). This documentation is stored as `.Rd` files in the `man/` directory.
+
+* The Rd format is a markup language that is loosely based on LaTeX
+
+* Rd files are processed into LaTeX, HTML, and plain text when building the package
+
+* All packages need Rd files, that doesn't mean you need to write Rd
+
+## Roxygen2
+
+> The premise of roxygen2 is simple: describe your functions in comments next to their definitions and roxygen2 will process your source code and comments to automatically generate `.Rd` files in `man/`, `NAMESPACE`, and, if needed, the `Collate` field in `DESCRIPTION.`
+
+* roxygen uses special comment lines prefixed with `#'`
+
+* roxygen specific command have the format `@cmd` and mostly match `Rd` commands
+
+* `devtools::document()` or menu `Build > Document` with reprocess all source files and rebuild all `Rd`s
+
+* `usethis::create_package()` with `roxygen = TRUE` will initialize your package to use roxygen (default behavior)
+
+
+
+
+# Package vigenette(s)
+
+## Vignette
+
+Long form documentation for your package that live in `vignette/`, use `browseVignette(pkg)` to see a package's vignettes.
+
+* Not required, but adds a lot of value to a package
+
+* Generally these are literate documents (`.Rmd`, `.Rnw`) that are compiled to `.html` or `.pdf` when the package is built. 
+
+* Built packages retain the rendered document, the source document, and all source code
+
+  * `vignette("colwise", package = "dplyr")` opens rendered version
+
+  * `edit(vignette("colwise", package = "dplyr"))` opens code chunks
+
+* Use `usethis::use_vignette()` to create a RMarkdown vignette template
+
+
+## Articles
+
+These are an un-official extension to vignettes where package authors wish to include additional long form documentation that is included in their `pkgdown` site but not in the package (usually for space reasons).
+
+* Use `usethis::use_article()` to create
+
+* Files are added to `vignette/articles/` which is added to `.Rbuildignore`
 
 
 # Package data
@@ -380,34 +433,6 @@ If you want to include raw data files (e.g `.csv`, shapefiles, etc.) there are g
 
 * Example [sf](https://github.com/r-spatial/sf/tree/master/inst)
 
-
-
-# Package vigenette
-
-## Vignette
-
-Long form documentation for your package that live in `vignette/`, use `browseVignette(pkg)` to see a package's vignettes.
-
-* Not required, but adds a lot of value to a package
-
-* Generally these are literate documents (`.Rmd`, `.Rnw`) that are compiled to `.html` or `.pdf` when the package is built. 
-
-* Built packages retain the rendered document, the source document, and all source code
-
-  * `vignette("colwise", package = "dplyr")` opens rendered version
-
-  * `edit(vignette("colwise", package = "dplyr"))` opens code chunks
-
-* Use `usethis::use_vignette()` to create a RMarkdown vignette template
-
-
-## Articles
-
-These are an un-official extension to vignettes where package authors wish to include additional long form documentation that is included in their `pkgdown` site but not in the package (usually for space reasons).
-
-* Use `usethis::use_article()` to create
-
-* Files are added to `vignette/articles/` which is added to `.Rbuildignore`
 
 
 # Package checking
